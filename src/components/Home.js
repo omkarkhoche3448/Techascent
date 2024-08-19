@@ -14,6 +14,7 @@ import {
   faClock,
   faPiggyBank,
 } from "@fortawesome/free-solid-svg-icons";
+import Testimonials from "./Testimonials";
 
 const AnimatedCard = ({ children }) => {
   const [ref, inView] = useInView({
@@ -181,7 +182,7 @@ function Home() {
       </div>
 
       {/* Testimonial Section */}
-      <div className="bg-gradient-to-r from-purple-500 to-indigo-600 py-16">
+      {/* <div className="bg-gradient-to-r from-purple-500 to-indigo-600 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-white">
             What Our Clients Say
@@ -230,15 +231,22 @@ function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <Testimonials />
 
       {/* Our Previous Projects Section */}
-      <div className="bg-gray-100 py-16">
+      <div className="bg-gray-100 py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-5xl font-bold text-center mb-16 text-gray-800"
+          >
             Our Previous Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               {
                 id: 1,
@@ -246,9 +254,10 @@ function Home() {
                 description:
                   "A fully responsive online store built with React and Node.js",
                 image:
-                  "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=200&q=80",
+                  "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80",
                 github: "https://github.com/yourusername/ecommerce-platform",
                 demo: "https://demo-ecommerce.example.com",
+                tags: ["React", "Node.js", "MongoDB"],
               },
               {
                 id: 2,
@@ -256,51 +265,71 @@ function Home() {
                 description:
                   "Real-time analytics dashboard for social media management",
                 image:
-                  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=200&q=80",
+                  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80",
                 github:
                   "https://github.com/yourusername/social-media-dashboard",
                 demo: "https://demo-dashboard.example.com",
+                tags: ["Vue.js", "D3.js", "Firebase"],
               },
               {
                 id: 3,
                 name: "Fitness Tracker App",
                 description: "Mobile app for tracking workouts and nutrition",
                 image:
-                  "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=200&q=80",
+                  "https://images.unsplash.com/photo-1564930570037-bc7fe0d67f3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80",
                 github: "https://github.com/yourusername/fitness-tracker-app",
                 demo: "https://demo-fitness.example.com",
+                tags: ["React Native", "GraphQL", "AWS"],
               },
-              // ... (other projects)
+              // ... (add more projects as needed)
             ].map((project, index) => (
-              <AnimatedCard key={index}>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              >
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-40 object-cover mb-4 rounded"
+                  className="w-full h-48 object-cover"
                 />
-                <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-                <p className="text-gray-600 mb-4">
-                  {project.description.substring(0, 100)}...
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-800"
-                  >
-                    <FontAwesomeIcon icon={faGithub} size="lg" />
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-800"
-                  >
-                    <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" />
-                  </a>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-2 text-gray-800">
+                    {project.name}
+                  </h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap mb-4">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-gray-800 transition-colors duration-300"
+                    >
+                      <FontAwesomeIcon icon={faGithub} size="2x" />
+                    </a>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+                    >
+                      View Demo
+                    </a>
+                  </div>
                 </div>
-              </AnimatedCard>
+              </motion.div>
             ))}
           </div>
         </div>
