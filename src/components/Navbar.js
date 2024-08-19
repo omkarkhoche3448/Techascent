@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import logo from "./techascent.png";
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -31,7 +31,7 @@ function Navbar() {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-purple-600">
-          YourLogo
+          <img src={logo} className="w-[160px]" />
         </Link>
         <div className="space-x-4">
           {["Home", "About", "Contact"].map((item) => (
