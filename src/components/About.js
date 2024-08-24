@@ -102,7 +102,7 @@ function About() {
       </AnimatedSection>
 
       {/* Team Section */}
-      <AnimatedSection>
+      {/* <AnimatedSection>
         <div className="bg-gradient-to-r from-indigo-500 to-purple-500 py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12 text-white">
@@ -138,35 +138,51 @@ function About() {
             </div>
           </div>
         </div>
-      </AnimatedSection>
+      </AnimatedSection> */}
 
       {/* Values Section */}
       <AnimatedSection>
-        <div className="container mx-auto py-16 px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-purple-600">
-            Our Values
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["Innovation", "Collaboration", "Excellence"].map(
-              (value, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-purple-500"
-                >
-                  <h3 className="text-2xl font-bold mb-4 text-purple-600">
-                    {value}
-                  </h3>
-                  <p className="text-gray-700">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-              )
-            )}
-          </div>
+  <div className="container mx-auto py-16 px-4">
+    <h2 className="text-4xl font-bold text-center mb-12 text-purple-600">
+      Our Values
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        {
+          value: "Innovation",
+          description: "We continuously explore new technologies and creative solutions to stay ahead in a fast-evolving market. Our innovative approach allows us to deliver unique and effective solutions tailored to our clients' needs.",
+          impact: "For instance, our recent project involved integrating AI into traditional systems to automate repetitive tasks, resulting in a 30% increase in operational efficiency for our clients."
+        },
+        {
+          value: "Collaboration",
+          description: "We believe in working closely with our clients and team members to achieve shared goals. Our collaborative approach ensures that every perspective is considered, leading to more robust and well-rounded solutions.",
+          impact: "A notable example is our cross-functional team working on a recent project where developers, designers, and marketers collaborated seamlessly to create a user-centric product that received widespread acclaim."
+        },
+        {
+          value: "Excellence",
+          description: "Striving for excellence is at the core of what we do. We set high standards for ourselves and our work, ensuring that every project is executed with precision, quality, and attention to detail.",
+          impact: "In a recent client engagement, our commitment to excellence was evident when we delivered a complex application ahead of schedule, which significantly exceeded the client's expectations and led to a long-term partnership."
+        }
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-purple-500"
+        >
+          <h3 className="text-2xl font-bold mb-4 text-purple-600">
+            {item.value}
+          </h3>
+          <p className="text-gray-700 mb-4">
+            {item.description}
+          </p>
+          <p className="text-gray-600 italic">
+            {item.impact}
+          </p>
         </div>
-      </AnimatedSection>
+      ))}
+    </div>
+  </div>
+</AnimatedSection>
+
     </div>
   );
 }

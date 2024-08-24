@@ -23,19 +23,27 @@ function Contact() {
               className="bg-white p-8 rounded-lg shadow-lg"
             >
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              <p className="mb-4">
+              {/* <p className="mb-4">
                 <strong>Address:</strong> 123 Web Dev Street, Digital City,
                 12345
+              </p> */}
+              <p className="mb-4">
+                <strong>Phone: </strong> 
+                <a href="tel:+1234567890" className="text-purple-500">
+                  +91 7058373993
+
+                </a>
               </p>
               <p className="mb-4">
-                <strong>Phone:</strong> (123) 456-7890
-              </p>
-              <p className="mb-4">
-                <strong>Email:</strong> info@yourcompany.com
-              </p>
+            <strong>Email: </strong> 
+                <a href="mailto:techascent07@gmail.com" className="text-purple-500">
+               techascent07@gmail.com
+                </a>
+                </p>
+
               <div className="mt-8">
                 <img
-                  src="https://media.giphy.com/media/3o7TKUM3IgJBX2as9O/giphy.gif"
+                  src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDJ1MXBnaTg5emFzdTlhZDV2MnkwcDNyYzV6b2JwYXoyeGtiNWt0MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KCpK92XQHCutWBUz3W/giphy.gif"
                   alt="Contact"
                   className="w-full rounded-lg"
                 />

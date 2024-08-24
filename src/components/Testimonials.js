@@ -25,24 +25,25 @@ const TestimonialCard = ({ testimonial, index }) => (
 function Testimonials() {
   const testimonials = [
     {
-      name: "John Doe",
-      company: "TechCorp",
-      image: "https://randomuser.me/api/portraits/men/1.jpg",
+      name: "Amit Patil",
+      company: "Hotel Delights",
+      image: "https://randomuser.me/api/portraits/men/77.jpg",
       text: "Working with this team was an absolute pleasure. They transformed our online presence and helped us reach new heights.",
     },
     {
-      name: "Jane Smith",
+      name: "Priya Patel",
       company: "DesignHub",
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
+      image: "https://randomuser.me/api/portraits/women/19.jpg",
       text: "The creativity and attention to detail in their work is unparalleled. Our new website has received countless compliments.",
     },
     {
-      name: "Alex Johnson",
+      name: "Rohit Verma",
       company: "InnovateTech",
-      image: "https://randomuser.me/api/portraits/men/2.jpg",
+      image: "https://randomuser.me/api/portraits/men/69.jpg",
       text: "Their expertise in the latest technologies and trends really sets them apart. They delivered beyond our expectations.",
     },
   ];
+  
 
   return (
     <section className="py-20 bg-gray-50">
@@ -70,12 +71,12 @@ function Testimonials() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <a
+          {/* <a
             href="/testimonials"
             className="bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition duration-300 inline-block"
           >
             View All Testimonials
-          </a>
+          </a> */}
         </motion.div>
       </div>
     </section>

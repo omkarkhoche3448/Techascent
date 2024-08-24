@@ -39,7 +39,7 @@ function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto  py-4 flex justify-between items-center px-10">
         <Link to="/" className="text-2xl font-bold text-purple-600">
           <img src={logo} alt="Tech Ascent Logo" className="w-[160px]" />
         </Link>
