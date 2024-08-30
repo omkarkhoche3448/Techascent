@@ -27,13 +27,13 @@ function Contact() {
                 <strong>Address:</strong> 123 Web Dev Street, Digital City,
                 12345
               </p> */}
-              <p className="mb-4">
-                <strong>Phone: </strong> 
-                <a href="tel:+1234567890" className="text-purple-500">
-                  +91 7058373993
+              // <p className="mb-4">
+              //   <strong>Phone: </strong> 
+              //   <a href="tel:+1234567890" className="text-purple-500">
+              //     +91 7058373993
 
-                </a>
-              </p>
+              //   </a>
+              // </p>
               <p className="mb-4">
             <strong>Email: </strong> 
                 <a href="mailto:techascent07@gmail.com" className="text-purple-500">
