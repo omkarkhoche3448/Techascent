@@ -24,6 +24,103 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Testimonials from "./Testimonials";
 
+const projects = [
+  {
+    id: 1,
+    name: "MBBS Abroad Consultation Platform",
+    description:
+      "An all-in-one platform for MBBS aspirants aiming to study medicine abroad. The platform provides AI-driven recommendations for universities and countries, guiding students through the entire admission process. Features include a virtual assistant powered by a chatbot, scholarship opportunities, and direct access to application resources, all designed to simplify the complexities of pursuing medical education overseas.",
+    videoUrl: "https://www.youtube.com/embed/your-video-id", // Replace with your actual video URL
+    tags: ["MERN", "AWS (EC2, S3, CloudFront)"],
+    demo: "http://mbbsroutes.com",
+    image:
+      "https://res.cloudinary.com/dkbzscmmq/image/upload/v1733998424/Projects/sruxo05lwoijdaohm1i8.png",
+    github: "https://github.com/yourusername/mbbs-abroad-platform",
+  },
+  {
+    id: 2,
+    name: "Brainwave Academy-EdTech",
+    description:
+      "An innovative EdTech platform designed to enhance the learning experience with interactive video lessons, quizzes, and personalized course recommendations. Brainwave Academy focuses on empowering students to learn at their own pace with tools that support real-time progress tracking, community-driven learning, and AI-powered course suggestions to help learners achieve their academic goals efficiently.",
+    image:
+      "https://res.cloudinary.com/dkbzscmmq/image/upload/v1728483934/Projects/dfmxk9unh92ms43vul9g.png",
+    github: "https://github.com/yourusername/brainwave-academy",
+    demo: "https://brainwaveacademy.vercel.app",
+    tags: ["React", "Node.js", "MongoDB"],
+  },
+  {
+    id: 3,
+    name: "CineFlex Movies",
+    description:
+      "CineFlex is a cutting-edge movie discovery platform that allows users to easily browse movies, watch trailers, and add their favorites to a personalized wish list. The app’s sleek design and intuitive user interface make movie exploration enjoyable, while seamless integration with popular movie APIs provides up-to-date information on movie ratings, genres, and release dates.",
+    image:
+      "https://res.cloudinary.com/dkbzscmmq/image/upload/v1728483936/Projects/weqy7bhqkf6njmuvs3il.png",
+    github: "https://github.com/yourusername/cineflex-movies",
+    demo: "https://cineflex-movies.vercel.app",
+    tags: ["React", "Node.js", "API Integration"],
+  },
+  {
+    id: 4,
+    name: "E-commerce Platform",
+    description:
+      "A fully responsive and scalable e-commerce platform built with React and Node.js, allowing users to browse products, add them to their shopping cart, and complete secure transactions through integrated payment gateways. The admin panel empowers store owners to manage products, track orders, and analyze sales data. This project focuses on providing a seamless shopping experience across all devices and screen sizes.",
+    image: ecom,
+    github: "https://github.com/yourusername/ecommerce-platform",
+    demo: "https://demo-ecommerce.example.com",
+    tags: ["React", "Node.js", "MongoDB"],
+  },
+  {
+    id: 5,
+    name: "Social Media Dashboard",
+    description:
+      "A real-time analytics dashboard designed for social media management, providing insights into engagement, reach, and audience demographics. Built using Vue.js and D3.js, the platform offers visually appealing charts and data visualizations to help businesses track social media performance and make data-driven decisions. Firebase is used for seamless data synchronization and real-time updates.",
+    image: social,
+    github: "https://github.com/yourusername/social-media-dashboard",
+    demo: "https://demo-dashboard.example.com",
+    tags: ["Vue.js", "D3.js", "Firebase"],
+  },
+  {
+    id: 6,
+    name: "Fitness Tracker App",
+    description:
+      "A mobile app built with Flutter that helps users track their workouts, nutrition, and overall fitness progress. The app allows users to log exercises, set fitness goals, and monitor their daily calorie intake. It also integrates with AWS for cloud storage and real-time data synchronization, providing users with a personalized fitness journey and insights to achieve their health goals.",
+    image: fitness,
+    github: "https://github.com/yourusername/fitness-tracker-app",
+    demo: "https://demo-fitness.example.com",
+    tags: ["Flutter", "GraphQL", "AWS"],
+  },
+  {
+    id: 7,
+    name: "Code Editor",
+    description:
+      "A versatile, cloud-based code editor designed to provide developers with an enhanced coding environment. This editor supports syntax highlighting, auto-completion, error detection, and custom extensions. It integrates with MongoDB and AWS to store user code and projects, making it an ideal tool for developers who want to code from anywhere with a seamless experience across devices.",
+    image: code,
+    github: "https://github.com/yourusername/code-editor",
+    demo: "https://demo-code-editor.example.com",
+    tags: ["React", "MongoDB", "AWS"],
+  },
+  {
+    id: 8,
+    name: "AI-Powered Job Hunt Platform",
+    description:
+      "A job search platform that leverages AI to recommend the most relevant job opportunities based on user profiles, skills, and preferences. The platform uses machine learning algorithms to match job seekers with companies that fit their qualifications, while providing resources like resume building, interview tips, and salary predictions to help users succeed in their job search.",
+    image: job,
+    github: "https://github.com/yourusername/job-hunt-platform",
+    demo: "https://demo-job-hunt.example.com",
+    tags: ["React", "Node.js", "AI"],
+  },
+  {
+    id: 9,
+    name: "Online Food Ordering App",
+    description:
+      "An intuitive food ordering app that lets users browse menus, place orders, and track deliveries with ease. The app integrates with Stripe for secure payments and Firebase for real-time updates on order status. With a smooth and engaging interface, users can quickly select their favorite meals, save them for future orders, and enjoy a hassle-free food delivery experience.",
+    image: food,
+    github: "https://github.com/yourusername/food-ordering-app",
+    demo: "https://demo-food-ordering.example.com",
+    tags: ["Flutter", "Firebase", "Stripe"],
+  },
+];
+
 const AnimatedCard = ({ children }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -266,102 +363,29 @@ function Home() {
           >
             Our Previous Projects
           </motion.h2>
-          <div className="flex flex-wrap justify-center items-center gap-10 max-w-7xl mx-auto px-4 py-8">
-            {[
-              {
-                id: 1,
-                name: "E-commerce Platform",
-                description:
-                  "A fully responsive online store built with React and Node.js",
-                image: ecom,
-                github: "https://github.com/yourusername/ecommerce-platform",
-                demo: "https://demo-ecommerce.example.com",
-                tags: ["React", "Node.js", "MongoDB"],
-              },
-              {
-                id: 2,
-                name: "Social Media Dashboard",
-                description:
-                  "Real-time analytics dashboard for social media management",
-                image: social,
-                github:
-                  "https://github.com/yourusername/social-media-dashboard",
-                demo: "https://demo-dashboard.example.com",
-                tags: ["Vue.js", "D3.js", "Firebase"],
-              },
-              {
-                id: 3,
-                name: "Fitness Tracker App",
-                description: "Mobile app for tracking workouts and nutrition",
-                image: fitness,
-                github: "https://github.com/yourusername/fitness-tracker-app",
-                demo: "https://demo-fitness.example.com",
-                tags: ["Flutter", "GraphQL", "AWS"],
-              },
-              {
-                id: 4,
-                name: "Code Editor",
-                description:
-                  "A versatile code editor with advanced features and extensions",
-                image: code,
-                github: "https://github.com/yourusername/code-editor",
-                demo: "https://demo-code-editor.example.com",
-                tags: ["React", "MongoDB", "AWS"],
-              },
-              {
-                id: 5,
-                name: "AI-Powered Job Hunt Platform",
-                description:
-                  "A platform for job hunting with AI-powered recommendations",
-                image: job,
-                github: "https://github.com/yourusername/job-hunt-platform",
-                demo: "https://demo-job-hunt.example.com",
-                tags: ["React", "Node.js", "AI"],
-              },
-              {
-                id: 6,
-                name: "Online Food Ordering App",
-                description:
-                  "An app for ordering food online with a user-friendly interface",
-                image: food,
-                github: "https://github.com/yourusername/food-ordering-app",
-                demo: "https://demo-food-ordering.example.com",
-                tags: ["Flutter", "Firebase", "Stripe"],
-              },  
-              {
-                id: 1,
-                name: "MBBS Abroad Consultation Platform",
-                description:
-                  "A platform for MBBS aspirants to explore and enroll in international medical programs with AI-driven recommendations & chatbot support.",
-                videoUrl: "https://www.youtube.com/embed/your-video-id", // Replace with your actual video URL
-                tags: [
-                  "MERN",
-                  "AWS (EC2, S3, CloudFront)",
-                  "Secure Payment Gateway",
-                ],
-                image:
-                  "https://res.cloudinary.com/dkbzscmmq/image/upload/v1733990058/Projects/xox8py1v5fn1q5risak0.png",
-                github: "https://github.com/yourusername/mbbs-abroad-platform",
-              },
-              // ... (add more projects as needed)
-            ].map((project, index) => (
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {projects.map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="w-full sm:w-[calc(50%-2.5rem)] lg:w-[calc(33.333%-2.5rem)] bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="flex flex-col bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-sm h-[700px]"
               >
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="w-full h-48 object-cover"
+                <div
+                  className=" bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${project.image})`,
+                    height: "200px",
+                  }}
                 />
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-2 text-gray-800">
                     {project.name}
                   </h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <p className="text-gray-600 mb-4 flex-grow overflow-hidden">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap mb-4">
                     {project.tags.map((tag, tagIndex) => (
                       <span
@@ -372,24 +396,24 @@ function Home() {
                       </span>
                     ))}
                   </div>
-                  {/* <div className="flex justify-between items-center">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-800 transition-colors duration-300"
-              >
-                <FontAwesomeIcon icon={faGithub} size="2x" />
-              </a>
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
-              >
-                View Demo
-              </a>
-            </div> */}
+                  <div className="flex justify-between items-center mt-auto">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-gray-800 transition-colors duration-300"
+                    >
+                      <FontAwesomeIcon icon={faGithub} size="2x" />
+                    </a>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+                    >
+                      View Demo
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             ))}
