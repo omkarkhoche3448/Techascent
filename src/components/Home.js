@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
-import image1 from './image1.png';
-import image2 from './image2.jpg';
-import image3 from './image3.webp';
-import social from './prImages/social.jpg'
-import ecom from './prImages/ecom.png'
-import code from './prImages/code.png'
-import fitness from "./prImages/fitness.jpg"
-import food from "./prImages/food.png"
-import job from "./prImages/job.png"
+import image1 from "./image1.png";
+import image2 from "./image2.jpg";
+import image3 from "./image3.webp";
+import social from "./prImages/social.jpg";
+import ecom from "./prImages/ecom.png";
+import code from "./prImages/code.png";
+import fitness from "./prImages/fitness.jpg";
+import food from "./prImages/food.png";
+import job from "./prImages/job.png";
 import {
   faHeadset,
   faStar,
@@ -96,42 +96,40 @@ function Home() {
 
       {/* Services Section */}
       <div className="container mx-auto py-16 px-4">
-  <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {[
-      {
-        service: "Web Development & Design",
-        image: image1,
-        description:
-          "Crafting visually stunning and highly responsive websites that capture the essence of your brand. Our designs are tailored to provide a seamless user experience, ensuring your online presence stands out.",
-      },
-      {
-        service: "App Development",
-        image: image2,
-        description:
-          "Building powerful and scalable applications that are custom-made using cutting-edge technologies. We develop apps from scratch, revamp existing ones, and provide maintenance services for ongoing support.",
-      },
-      {
-        service: "Data Analytics & SEO",
-        image: image3,  
-        description:
-          "Leveraging data analytics to track and measure the performance of your website. We provide SEO services to help you rank higher on search engines and attract more visitors to your site.",
-      },
-    ].map(({ service, image, description }, index) => (
-      <AnimatedCard key={index}>
-        <img
-          src={image}
-          alt={service}
-          className="w-full h-48 object-cover mb-6 rounded"
-        />
-        <h3 className="text-2xl font-bold mb-4">{service}</h3>
-        <p>{description}</p>
-      </AnimatedCard>
-    ))}
-  </div>
-</div>
-
-
+        <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              service: "Web Development & Design",
+              image: image1,
+              description:
+                "Crafting visually stunning and highly responsive websites that capture the essence of your brand. Our designs are tailored to provide a seamless user experience, ensuring your online presence stands out.",
+            },
+            {
+              service: "App Development",
+              image: image2,
+              description:
+                "Building powerful and scalable applications that are custom-made using cutting-edge technologies. We develop apps from scratch, revamp existing ones, and provide maintenance services for ongoing support.",
+            },
+            {
+              service: "Data Analytics & SEO",
+              image: image3,
+              description:
+                "Leveraging data analytics to track and measure the performance of your website. We provide SEO services to help you rank higher on search engines and attract more visitors to your site.",
+            },
+          ].map(({ service, image, description }, index) => (
+            <AnimatedCard key={index}>
+              <img
+                src={image}
+                alt={service}
+                className="w-full h-48 object-cover mb-6 rounded"
+              />
+              <h3 className="text-2xl font-bold mb-4">{service}</h3>
+              <p>{description}</p>
+            </AnimatedCard>
+          ))}
+        </div>
+      </div>
 
       {/* Why Clients Choose Us Section */}
       <div className="bg-gradient-to-b from-purple-100 to-white py-16">
@@ -259,107 +257,122 @@ function Home() {
 
       {/* Our Previous Projects Section */}
       <div className="bg-gray-100 py-20">
-  <div className="container mx-auto px-4">
-    <motion.h2
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="text-5xl font-bold text-center mb-16 text-gray-800"
-    >
-      Our Previous Projects
-    </motion.h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      {[
-        {
-          id: 1,
-          name: "E-commerce Platform",
-          description:
-            "A fully responsive online store built with React and Node.js",
-          image:ecom,
-          github: "https://github.com/yourusername/ecommerce-platform",
-          demo: "https://demo-ecommerce.example.com",
-          tags: ["React", "Node.js", "MongoDB"],
-        },
-        {
-          id: 2,
-          name: "Social Media Dashboard",
-          description:
-            "Real-time analytics dashboard for social media management",
-          image:social,
-          github:  "https://github.com/yourusername/social-media-dashboard",
-          demo: "https://demo-dashboard.example.com",
-          tags: ["Vue.js", "D3.js", "Firebase"],
-        },
-        {
-          id: 3,
-          name: "Fitness Tracker App",
-          description: "Mobile app for tracking workouts and nutrition",
-          image:
-            fitness,
-          github: "https://github.com/yourusername/fitness-tracker-app",
-          demo: "https://demo-fitness.example.com",
-          tags: ["Flutter", "GraphQL", "AWS"],
-        },
-        {
-          id: 4,
-          name: "Code Editor",
-          description: "A versatile code editor with advanced features and extensions",
-          image:
-            code,
-          github: "https://github.com/yourusername/code-editor",
-          demo: "https://demo-code-editor.example.com",
-          tags: ["React", "MongoDB", "AWS"],
-        },
-        {
-          id: 5,
-          name: "AI-Powered Job Hunt Platform",
-          description: "A platform for job hunting with AI-powered recommendations",
-          image:
-            job,
-          github: "https://github.com/yourusername/job-hunt-platform",
-          demo: "https://demo-job-hunt.example.com",
-          tags: ["React", "Node.js", "AI"],
-        },
-        {
-          id: 6,
-          name: "Online Food Ordering App",
-          description: "An app for ordering food online with a user-friendly interface",
-          image:
-            food,
-          github: "https://github.com/yourusername/food-ordering-app",
-          demo: "https://demo-food-ordering.example.com",
-          tags: ["Flutter", "Firebase", "Stripe"],
-        },
-        // ... (add more projects as needed)
-      ].map((project, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
-        >
-          <img
-            src={project.image}
-            alt={project.name}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-6">
-            <h3 className="text-2xl font-bold mb-2 text-gray-800">
-              {project.name}
-            </h3>
-            <p className="text-gray-600 mb-4">{project.description}</p>
-            <div className="flex flex-wrap mb-4">
-              {project.tags.map((tag, tagIndex) => (
-                <span
-                  key={tagIndex}
-                  className="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            {/* <div className="flex justify-between items-center">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-5xl font-bold text-center mb-16 text-gray-800"
+          >
+            Our Previous Projects
+          </motion.h2>
+          <div className="flex flex-wrap justify-center items-center gap-10 max-w-7xl mx-auto px-4 py-8">
+            {[
+              {
+                id: 1,
+                name: "E-commerce Platform",
+                description:
+                  "A fully responsive online store built with React and Node.js",
+                image: ecom,
+                github: "https://github.com/yourusername/ecommerce-platform",
+                demo: "https://demo-ecommerce.example.com",
+                tags: ["React", "Node.js", "MongoDB"],
+              },
+              {
+                id: 2,
+                name: "Social Media Dashboard",
+                description:
+                  "Real-time analytics dashboard for social media management",
+                image: social,
+                github:
+                  "https://github.com/yourusername/social-media-dashboard",
+                demo: "https://demo-dashboard.example.com",
+                tags: ["Vue.js", "D3.js", "Firebase"],
+              },
+              {
+                id: 3,
+                name: "Fitness Tracker App",
+                description: "Mobile app for tracking workouts and nutrition",
+                image: fitness,
+                github: "https://github.com/yourusername/fitness-tracker-app",
+                demo: "https://demo-fitness.example.com",
+                tags: ["Flutter", "GraphQL", "AWS"],
+              },
+              {
+                id: 4,
+                name: "Code Editor",
+                description:
+                  "A versatile code editor with advanced features and extensions",
+                image: code,
+                github: "https://github.com/yourusername/code-editor",
+                demo: "https://demo-code-editor.example.com",
+                tags: ["React", "MongoDB", "AWS"],
+              },
+              {
+                id: 5,
+                name: "AI-Powered Job Hunt Platform",
+                description:
+                  "A platform for job hunting with AI-powered recommendations",
+                image: job,
+                github: "https://github.com/yourusername/job-hunt-platform",
+                demo: "https://demo-job-hunt.example.com",
+                tags: ["React", "Node.js", "AI"],
+              },
+              {
+                id: 6,
+                name: "Online Food Ordering App",
+                description:
+                  "An app for ordering food online with a user-friendly interface",
+                image: food,
+                github: "https://github.com/yourusername/food-ordering-app",
+                demo: "https://demo-food-ordering.example.com",
+                tags: ["Flutter", "Firebase", "Stripe"],
+              },  
+              {
+                id: 1,
+                name: "MBBS Abroad Consultation Platform",
+                description:
+                  "A platform for MBBS aspirants to explore and enroll in international medical programs with AI-driven recommendations & chatbot support.",
+                videoUrl: "https://www.youtube.com/embed/your-video-id", // Replace with your actual video URL
+                tags: [
+                  "MERN",
+                  "AWS (EC2, S3, CloudFront)",
+                  "Secure Payment Gateway",
+                ],
+                image:
+                  "https://res.cloudinary.com/dkbzscmmq/image/upload/v1733990058/Projects/xox8py1v5fn1q5risak0.png",
+                github: "https://github.com/yourusername/mbbs-abroad-platform",
+              },
+              // ... (add more projects as needed)
+            ].map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="w-full sm:w-[calc(50%-2.5rem)] lg:w-[calc(33.333%-2.5rem)] bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              >
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-2 text-gray-800">
+                    {project.name}
+                  </h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap mb-4">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  {/* <div className="flex justify-between items-center">
               <a
                 href={project.github}
                 target="_blank"
@@ -377,12 +390,12 @@ function Home() {
                 View Demo
               </a>
             </div> */}
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</div>
+        </div>
+      </div>
 
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4 text-center">
